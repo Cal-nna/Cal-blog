@@ -2,99 +2,112 @@
 
 @section('content')
     <div class="background-image grid grid-cols-1 m-auto">
-        <div class="flex text-gray-100 pt-10">
+        <div class="flex text-white pt-10">
             <div class="m-auto pt-4 pb-16 sm:m-auto w-4/5 block text-center">
-                <h1 class="sm:text-white text-5xl uppercase font-bold text-shadow-md pb-14">
-                    Do you want to become a developer?
+                <h1 class="sm:text-white text-6xl uppercase font-bold text-shadow-md pb-14" style="font-family: 'Playfair Display', serif;">
+                    The things that inspire the artists
                 </h1>
-                <a 
+                <a
                     href="/blog"
-                    class="text-center bg-gray-50 text-gray-700 py-2 px-4 font-bold text-xl uppercase">
+                    class="text-center bg-white text-indigo-600 py-3 px-6 font-bold text-xl uppercase rounded-full hover:bg-indigo-600 hover:text-white transition duration-300">
                     Read More
                 </a>
             </div>
         </div>
     </div>
 
-    <div class="sm:grid grid-cols-2 gap-20 w-4/5 mx-auto py-15 border-b border-gray-200">
-        <div>
-            <img src="https://cdn.pixabay.com/photo/2014/05/03/01/03/laptop-336704_960_720.jpg" width="700" alt="">
-        </div>
+    <div class="border-8 border-white rounded-lg"> <!-- Thicker white border -->
+        <div class="bg-cover bg-center" style="background-image: url('https://t4.ftcdn.net/jpg/03/00/94/69/240_F_300946931_kSR84OqudEhsmBZH47HU6ud7aZIDMjEx.jpg');">
+            <div class="sm:grid grid-cols-3 gap-10 w-4/5 mx-auto py-20">
+                <!-- Left Side: First Row of Text -->
+                <div class="m-auto text-left">
+                    <h2 class="text-3xl font-bold text-gray-900" style="font-family: 'Merriweather', serif;"> <!-- Brighter red text -->
+                        Ideas...
+                    </h2>
+                </div>
 
-        <div class="m-auto sm:m-auto text-left w-4/5 block">
-            <h2 class="text-3xl font-extrabold text-gray-600">
-                Struggling to be a better web developer?
-            </h2>
-            
-            <p class="py-8 text-gray-500 text-s">
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus.
-            </p>
+                <!-- Middle: Larger Image -->
+                <div class="flex justify-center items-center col-span-1">
+                    <img src="https://art.ngfiles.com/images/6005000/6005692_1163749_thecal_cold-weather.011e92362a5877a5f6c673400483cb53.webp?f1725297720" width="1000" alt="" class="rounded-lg shadow-2xl max-w-full">
+                </div>
 
-            <p class="font-extrabold text-gray-600 text-s pb-9">
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sapiente magnam vero nostrum! Perferendis eos molestias porro vero. Vel alias.
-            </p>
+                <!-- Right Side: Second Row of Text -->
+                <div class="m-auto text-left">
+                    <p class="py-8 text-gray-900 text-lg"> <!-- Brighter red text -->
+                        ... they come from anywhere and everywhere...
+                    </p>
 
-            <a 
-                href="/blog"
-                class="uppercase bg-blue-500 text-gray-100 text-s font-extrabold py-3 px-8 rounded-3xl">
-                Find Out More
-            </a>
+{{--                    <a--}}
+{{--                        href="/blog"--}}
+{{--                        class="uppercase bg-indigo-600 text-white text-lg font-bold py-3 px-8 rounded-full hover:bg-indigo-700 transition duration-300">--}}
+{{--                        Find Out More--}}
+{{--                    </a>--}}
+                </div>
+
+                <!-- Left Side: Third Row of Text (Moved Down) -->
+                <div class="m-auto text-left mt-12 col-span-3"> <!-- Added mt-12 for top margin and col-span-3 to span full width -->
+                    <p class="font-semibold text-gray-900 text-lg"> <!-- Brighter red text -->
+                        Our ideas come from everything we see and do, things that inspire us.
+                    </p>
+                </div>
+            </div>
         </div>
     </div>
 
-    <div class="text-center p-15 bg-black text-white">
-        <h2 class="text-2xl pb-5 text-l"> 
-            I'm an expert in...
+    <div class="text-center p-20 bg-gray-900 text-white">
+        <h2 class="text-3xl pb-5" style="font-family: 'Playfair Display', serif;">
+            Expression is unique from person to person...
         </h2>
 
-        <span class="font-extrabold block text-4xl py-1">
-            Ux Design
+        <span class="font-bold block text-5xl py-1" style="font-family: 'Merriweather', serif;">
+            What could come for
         </span>
-        <span class="font-extrabold block text-4xl py-1">
-            Project Management
+        <span class="font-bold block text-5xl py-1" style="font-family: 'Merriweather', serif;">
+            YOUR
         </span>
-        <span class="font-extrabold block text-4xl py-1">
-            Digital Strategy
+        <span class="font-bold block text-5xl py-1" style="font-family: 'Merriweather', serif;">
+            Mind...
         </span>
-        <span class="font-extrabold block text-4xl py-1">
-            Backend Development
+        <span class="font-bold block text-5xl py-1" style="font-family: 'Merriweather', serif;">
+            Write about it here for all to see
         </span>
     </div>
 
-    <div class="text-center py-15">
-        <span class="uppercase text-s text-gray-400">
-            Blog
+    <div class="text-center py-20">
+        <span class="uppercase text-sm text-indigo-600 font-bold">
+            Mind Blurbs
         </span>
 
-        <h2 class="text-4xl font-bold py-10">
-            Recent Posts
+        <h2 class="text-5xl font-bold py-10 text-gray-800" style="font-family: 'Playfair Display', serif;">
+            Recent Enlightments
         </h2>
 
-        <p class="m-auto w-4/5 text-gray-500">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque exercitationem saepe enim veritatis, eos temporibus quaerat facere consectetur qui.
+        <p class="m-auto w-4/5 text-gray-600 text-lg">
+            This site allows you to share the things that inspire your means to express, what you choose to express and so on.
+            So go on, snoop about or write about yourself!
         </p>
     </div>
 
     <div class="sm:grid grid-cols-2 w-4/5 m-auto">
-        <div class="flex bg-yellow-700 text-gray-100 pt-10">
+        <div class="flex bg-indigo-600 text-white pt-10">
             <div class="m-auto pt-4 pb-16 sm:m-auto w-4/5 block">
-                <span class="uppercase text-xs">
+                <span class="uppercase text-sm font-bold">
                     PHP
                 </span>
 
-                <h3 class="text-xl font-bold py-10">
+                <h3 class="text-2xl font-bold py-10" style="font-family: 'Merriweather', serif;">
                     Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptas necessitatibus dolorum error culpa laboriosam. Enim voluptas earum repudiandae consequuntur ad? Expedita labore aspernatur facilis quasi ex? Nemo hic placeat et?
                 </h3>
 
-                <a 
+                <a
                     href=""
-                    class="uppercase bg-transparent border-2 border-gray-100 text-gray-100 text-xs font-extrabold py-3 px-5 rounded-3xl">
+                    class="uppercase bg-transparent border-2 border-white text-white text-sm font-bold py-3 px-6 rounded-full hover:bg-white hover:text-indigo-600 transition duration-300">
                     Find Out More
                 </a>
             </div>
         </div>
         <div>
-            <img src="https://cdn.pixabay.com/photo/2014/05/03/01/03/laptop-336704_960_720.jpg" alt="">
+            <img src="https://cdn.pixabay.com/photo/2014/05/03/01/03/laptop-336704_960_720.jpg" alt="" class="rounded-lg shadow-2xl">
         </div>
     </div>
 @endsection
