@@ -16,7 +16,8 @@
 
     <p class="text-xl text-gray-700 pt-8 pb-10 leading-8 font-light">
         {{ $post->description }}
+{{-- img       {{ mix($post->image_path) }}--}}
     </p>
 </div>
 
-@endsection 
+@endsection

@@ -1,6 +1,7 @@
-<!-- resources/views/gallery.blade.php -->
+@extends('layouts.app')
 
-<!DOCTYPE html>
+@section('content')
+    <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -9,7 +10,6 @@
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
 <body class="bg-gray-100">
-@include('layouts.app') <!-- Include the header -->
 
 <div class="text-center py-20">
     <h1 class="text-5xl font-bold text-gray-800" style="font-family: 'Playfair Display', serif;">
@@ -38,8 +38,6 @@
     <!-- Add more images as needed -->
 </div>
 
- <!-- Include the footer -->
 </body>
-@include('layouts.footer')
 </html>
-
+@endsection
