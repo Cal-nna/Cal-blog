@@ -7,11 +7,7 @@
                 <h1 class="sm:text-white text-6xl uppercase font-bold text-shadow-md pb-14" style="font-family: 'Playfair Display', serif;">
                     The things that inspire the artists
                 </h1>
-                <a
-                    href="/blog"
-                    class="text-center bg-white text-indigo-600 py-3 px-6 font-bold text-xl uppercase rounded-full hover:bg-indigo-600 hover:text-white transition duration-300">
-                    Read More
-                </a>
+
             </div>
         </div>
     </div>
@@ -54,60 +50,81 @@
         </div>
     </div>
 
-    <div class="text-center p-20 bg-gray-900 text-white">
-        <h2 class="text-3xl pb-5" style="font-family: 'Playfair Display', serif;">
-            Expression is unique from person to person...
-        </h2>
+    <div class="text-center p-20 bg-cover bg-center relative" style="background-image: url('https://images.rawpixel.com/image_800/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvcHg5MjU4MDYtaW1hZ2Uta3d2dXNmMWIuanBn.jpg');">
+        <!-- Semi-transparent overlay -->
+        <div class="absolute inset-0 bg-black bg-opacity-50"></div>
 
-        <span class="font-bold block text-5xl py-1" style="font-family: 'Merriweather', serif;">
+        <!-- Content -->
+        <div class="relative">
+            <h2 class="text-3xl pb-5 text-white" style="font-family: 'Playfair Display', serif;">
+                Expression is unique from person to person...
+            </h2>
+
+            <span class="font-bold block text-5xl py-1 text-white" style="font-family: 'Merriweather', serif;">
             What could come for
         </span>
-        <span class="font-bold block text-5xl py-1" style="font-family: 'Merriweather', serif;">
+            <span class="font-bold block text-5xl py-1 text-white" style="font-family: 'Merriweather', serif;">
             YOUR
         </span>
-        <span class="font-bold block text-5xl py-1" style="font-family: 'Merriweather', serif;">
+            <span class="font-bold block text-5xl py-1 text-white" style="font-family: 'Merriweather', serif;">
             Mind...
         </span>
-        <span class="font-bold block text-5xl py-1" style="font-family: 'Merriweather', serif;">
+            <span class="font-bold block text-5xl py-1 text-white" style="font-family: 'Merriweather', serif;">
             Write about it here for all to see
         </span>
+
+            <a
+                href="/blog"
+                class="inline-block mt-10 text-center bg-white text-indigo-600 py-3 px-6 font-bold text-xl uppercase rounded-full hover:bg-indigo-600 hover:text-white transition duration-300">
+                Read More
+            </a>
+        </div>
     </div>
 
-    <div class="text-center py-20">
-        <span class="uppercase text-sm text-indigo-600 font-bold">
-            Mind Blurbs
-        </span>
-
-        <h2 class="text-5xl font-bold py-10 text-gray-800" style="font-family: 'Playfair Display', serif;">
-            Recent Enlightments
-        </h2>
-
-        <p class="m-auto w-4/5 text-gray-600 text-lg">
-            This site allows you to share the things that inspire your means to express, what you choose to express and so on.
-            So go on, snoop about or write about yourself!
-        </p>
-    </div>
-
-    <div class="sm:grid grid-cols-2 w-4/5 m-auto">
-        <div class="flex bg-indigo-600 text-white pt-10">
-            <div class="m-auto pt-4 pb-16 sm:m-auto w-4/5 block">
-                <span class="uppercase text-sm font-bold">
-                    PHP
-                </span>
-
-                <h3 class="text-2xl font-bold py-10" style="font-family: 'Merriweather', serif;">
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptas necessitatibus dolorum error culpa laboriosam. Enim voluptas earum repudiandae consequuntur ad? Expedita labore aspernatur facilis quasi ex? Nemo hic placeat et?
+    <div class="sm:grid grid-cols-3 gap-10 w-4/5 m-auto mt-20"> <!-- Added mt-20 to move cards down -->
+        <!-- Image 1 -->
+        <a href="/page1" class="block overflow-hidden rounded-lg shadow-2xl hover:shadow-xl transition-all duration-300 hover:scale-105">
+            <img src="https://images.pexels.com/photos/281260/pexels-photo-281260.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Image 1" class="w-full h-64 object-cover">
+            <div class="p-6 bg-white">
+                <h3 class="text-xl font-bold text-gray-800" style="font-family: 'Merriweather', serif;">
+                    Page 1
                 </h3>
-
-                <a
-                    href=""
-                    class="uppercase bg-transparent border-2 border-white text-white text-sm font-bold py-3 px-6 rounded-full hover:bg-white hover:text-indigo-600 transition duration-300">
-                    Find Out More
-                </a>
+                <p class="mt-2 text-gray-600">
+                    Explore the first collection of inspiring works.
+                </p>
             </div>
-        </div>
-        <div>
-            <img src="https://cdn.pixabay.com/photo/2014/05/03/01/03/laptop-336704_960_720.jpg" alt="" class="rounded-lg shadow-2xl">
-        </div>
+        </a>
+
+        <!-- Image 2 -->
+        <a href="/page2" class="block overflow-hidden rounded-lg shadow-2xl hover:shadow-xl transition-all duration-300 hover:scale-105">
+            <img src="https://images.pexels.com/photos/2896668/pexels-photo-2896668.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Image 2" class="w-full h-64 object-cover">
+            <div class="p-6 bg-white">
+                <h3 class="text-xl font-bold text-gray-800" style="font-family: 'Merriweather', serif;">
+                    Page 2
+                </h3>
+                <p class="mt-2 text-gray-600">
+                    Discover the second set of creative expressions.
+                </p>
+            </div>
+        </a>
+
+        <!-- Image 3 -->
+        <a href="/page3" class="block overflow-hidden rounded-lg shadow-2xl hover:shadow-xl transition-all duration-300 hover:scale-105">
+            <img src="https://images.pexels.com/photos/315191/pexels-photo-315191.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Image 3" class="w-full h-64 object-cover">
+            <div class="p-6 bg-white">
+                <h3 class="text-xl font-bold text-gray-800" style="font-family: 'Merriweather', serif;">
+                    Page 3
+                </h3>
+                <p class="mt-2 text-gray-600">
+                    Dive into the third gallery of artistic creations.
+                </p>
+            </div>
+        </a>
     </div>
+
+    <!-- Centered "See more images" Button -->
+    <div class="flex justify-center mt-12"> <!-- Increased margin-top to mt-12 -->
+        <a class="no-underline hover:underline" href="{{ route('gallery') }}">{{ __('Gallery') }}</a>
+    </div>
+            <img src="https://cdn.pixabay.com/photo/2014/05/03/01/03/laptop-336704_960_720.jpg" alt="" class="rounded-lg shadow-2xl">
 @endsection

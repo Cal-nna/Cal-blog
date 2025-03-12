@@ -15,6 +15,9 @@ use App\Http\Controllers\PostsController;
 |
 */
 
+Route::get('/gallery', function () {
+    return view('gallery'); // This assumes you have a `gallery.blade.php` file in the `resources/views` directory
+})->name('gallery'); // Named route for easy reference
 Route::get('/', [PagesController::class, 'index']);
 
 Route::resource('/blog', PostsController::class);
