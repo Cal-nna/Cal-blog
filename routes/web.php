@@ -30,4 +30,4 @@ Auth::routes();
 
 Route::get('/home', [\App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::get('/gallery', [GalleryController::class, 'index']);
+Route::get('/gallery', [GalleryController::class, 'index'])->name('gallery');

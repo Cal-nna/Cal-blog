@@ -12,15 +12,15 @@
 
     <!-- Image Grid -->
     <div class="sm:grid grid-cols-3 gap-8 w-4/5 mx-auto pb-20">
-        @foreach($images as $image)
-            <a href="/page1" class="block overflow-hidden rounded-lg shadow-2xl hover:shadow-xl transition-all duration-300 hover:scale-105">
-                <img src="{{ asset($image->image_path) }}" alt="{{ $image->title }}" class="w-full h-64 object-cover">
+        @foreach($posts as $post)
+            <a href="/post/{{ $post->id }}" class="block overflow-hidden rounded-lg shadow-2xl hover:shadow-xl transition-all duration-300 hover:scale-105">
+                <img src="{{ asset($post->image_path) }}" alt="{{ $post->title }}" class="w-full h-64 object-cover">
                 <div class="p-6 bg-white">
                     <h3 class="text-xl font-bold text-gray-800" style="font-family: 'Merriweather', serif;">
-                        {{ $image->title ?? 'Untitled' }}
+                        {{ $post->title ?? 'Untitled' }}
                     </h3>
                     <p class="mt-2 text-gray-600">
-                        {{ $image->description ?? 'No description available.' }}
+                        {{ Str::limit($post->content, 100) ?? 'No description available.' }}
                     </p>
                 </div>
             </a>
