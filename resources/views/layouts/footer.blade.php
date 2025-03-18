@@ -36,7 +36,7 @@
 
             <ul class="py-4 sm:text-s pt-4 text-gray-400">
                 <li class="pb-1">
-                    <a href="/" class="hover:text-yellow-500 transition duration-300"> <!-- Added hover effect -->
+                    <a href="/aboutUs" class="hover:text-yellow-500 transition duration-300"> <!-- Updated to redirect to About Us -->
                         What we do
                     </a>
                 </li>

@@ -31,3 +31,7 @@ Auth::routes();
 Route::get('/home', [\App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::get('/gallery', [GalleryController::class, 'index'])->name('gallery');
+
+use App\Http\Controllers\AboutController;
+
+Route::get('/aboutUs', [AboutController::class, 'index'])->name('aboutUs');
