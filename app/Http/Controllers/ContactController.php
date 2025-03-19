@@ -5,6 +5,13 @@ use Illuminate\Http\Request;
 
 class ContactController extends Controller
 {
+    // Display the contact form (GET request)
+    public function index()
+    {
+        return view('contactUs'); // Make sure you have a Blade template named `contactUs.blade.php`
+    }
+
+    // Handle form submissions (POST request)
     public function store(Request $request)
     {
         // Validate the form data

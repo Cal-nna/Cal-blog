@@ -34,7 +34,7 @@
             </h3>
             <ul class="py-4 sm:text-s pt-4 text-gray-400">
                 <li class="pb-1">
-                    <a href="/about" class="hover:text-yellow-500 transition duration-300">
+                    <a href="/aboutUs" class="hover:text-yellow-500 transition duration-300">
                         What we do
                     </a>
                 </li>
@@ -49,7 +49,7 @@
                     </a>
                 </li>
                 <li class="pb-1">
-                    <a href="/" class="hover:text-yellow-500 transition duration-300">
+                    <a href="/contactUs" class="hover:text-yellow-500 transition duration-300">
                         Contact
                     </a>
                 </li>

@@ -34,4 +34,12 @@ Route::get('/gallery', [GalleryController::class, 'index'])->name('gallery');
 
 use App\Http\Controllers\AboutController;
 
+use App\Http\Controllers\ContactController;
+
+// Route to display the contact form (GET)
+Route::get('/contactUs', [ContactController::class, 'index'])->name('contactUs');
+
+// Route to handle form submissions (POST)
+Route::post('/contactUs', [ContactController::class, 'store'])->name('contactUs.store');
+
 Route::get('/aboutUs', [AboutController::class, 'index'])->name('aboutUs');
