@@ -13,9 +13,19 @@
     <!-- Image Grid -->
     <div class="sm:grid grid-cols-3 gap-8 w-4/5 mx-auto pb-20">
         @foreach($posts as $post)
-            <div class="block overflow-hidden rounded-lg shadow-2xl hover:shadow-xl transition-all duration-300 hover:scale-105">
-                <!-- Ensure the image path is correct -->
-                <img src="{{ asset('images/' . $post->image_path) }}" alt="{{ $post->title }}" class="w-full h-auto object-cover aspect-auto">
+            <div class="flex justify-center items-center">
+                <!-- Picture Frame -->
+                <div class="p-2 bg-gradient-to-br from-gray-300 to-gray-100 border-8 border-gray-400 rounded-lg shadow-lg">
+                    <!-- Inner Shadow for Depth -->
+                    <div class="p-4 bg-white border-4 border-gray-200 shadow-inner rounded-lg">
+                        <!-- Ensure the image retains its natural aspect ratio -->
+                        <img
+                            src="{{ asset('images/' . $post->image_path) }}"
+                            alt="{{ $post->title }}"
+                            class="max-w-full h-auto"
+                        >
+                    </div>
+                </div>
             </div>
         @endforeach
     </div>
