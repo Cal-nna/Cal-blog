@@ -127,4 +127,5 @@
         <a class="no-underline hover:underline" href="{{ route('gallery') }}">{{ __('Gallery') }}</a>
     </div>
             <img src="https://cdn.pixabay.com/photo/2014/05/03/01/03/laptop-336704_960_720.jpg" alt="" class="rounded-lg shadow-2xl">
+
 @endsection

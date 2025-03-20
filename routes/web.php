@@ -43,3 +43,8 @@ Route::get('/contactUs', [ContactController::class, 'index'])->name('contactUs')
 Route::post('/contactUs', [ContactController::class, 'store'])->name('contactUs.store');
 
 Route::get('/aboutUs', [AboutController::class, 'index'])->name('aboutUs');
+
+use App\Http\Controllers\PostController;
+
+// Route to handle liking a post
+Route::post('/posts/{post}/like', [PostController::class, 'like'])->name('posts.like');

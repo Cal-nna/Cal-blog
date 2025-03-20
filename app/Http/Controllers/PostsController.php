@@ -8,7 +8,15 @@ use Cviebrock\EloquentSluggable\Services\SlugService;
 
 class PostsController extends Controller
 {
- 
+    // Like a post
+    public function like(Post $post)
+    {
+        // Increment the likes count
+        $post->increment('likes');
+
+        // Return the updated likes count as JSON
+        return response()->json(['likes' => $post->likes]);
+    }
     public function __construct()
     {
         $this->middleware('auth', ['except' => ['index', 'show']]);
@@ -128,5 +136,6 @@ class PostsController extends Controller
         return redirect('/blog')
             ->with('message', 'Your post has been deleted!');
     }
+
 }
 
