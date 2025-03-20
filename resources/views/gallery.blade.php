@@ -18,12 +18,14 @@
                 <div class="p-2 bg-gradient-to-br from-gray-300 to-gray-100 border-8 border-gray-400 rounded-lg shadow-lg">
                     <!-- Inner Shadow for Depth -->
                     <div class="p-4 bg-white border-4 border-gray-200 shadow-inner rounded-lg">
-                        <!-- Ensure the image retains its natural aspect ratio -->
-                        <img
-                            src="{{ asset('images/' . $post->image_path) }}"
-                            alt="{{ $post->title }}"
-                            class="max-w-full h-auto"
-                        >
+                        <!-- Wrap the image in an anchor tag to make it a redirect button -->
+                        <a href="/blog/{{ $post->slug }}">
+                            <img
+                                src="{{ asset('images/' . $post->image_path) }}"
+                                alt="{{ $post->title }}"
+                                class="max-w-full h-auto"
+                            >
+                        </a>
                     </div>
                 </div>
             </div>
