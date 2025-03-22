@@ -110,7 +110,7 @@
                 })
                 .catch(error => {
                     console.error('Error:', error);
-                    alert('An error occurred while liking the post.'); // Notify the user
+                    alert('An error occurred while liking the post. Please ensure you are logged in before trying again'); // Notify the user
                 });
         }
     </script>

@@ -47,4 +47,4 @@ Route::get('/aboutUs', [AboutController::class, 'index'])->name('aboutUs');
 use App\Http\Controllers\PostController;
 
 // Route to handle liking a post
-Route::post('/posts/{post}/like', [PostController::class, 'like'])->name('posts.like');
+Route::post('/posts/{post}/like', [PostsController::class, 'like'])->name('posts.like');
