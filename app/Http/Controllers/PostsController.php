@@ -11,6 +11,7 @@ class PostsController extends Controller
     // Like a post
     public function like(Post $post)
     {
+        // Get the authenticated user
         $user = auth()->user();
 
         // Check if the user has already liked the post
@@ -23,6 +24,9 @@ class PostsController extends Controller
             $user->likedPosts()->attach($post->id);
             $message = 'Post liked successfully';
         }
+
+        // Debug: Log the likes table
+        \Log::info('Likes Table:', ['likes' => \DB::table('likes')->get()]);
 
         // Return the updated likes count
         return response()->json([

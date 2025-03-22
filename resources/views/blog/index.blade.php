@@ -93,9 +93,9 @@
             fetch(`/posts/${postId}/like`, {
                 method: 'POST',
                 headers: {
-                    'X-CSRF-TOKEN': '{{ csrf_token() }}', // Include CSRF token
+                    'X-CSRF-TOKEN': '{{ csrf_token() }}',
                     'Content-Type': 'application/json',
-                    'Accept': 'application/json', // Ensure the server returns JSON
+                    'Accept': 'application/json',
                 },
             })
                 .then(response => {
@@ -110,7 +110,7 @@
                 })
                 .catch(error => {
                     console.error('Error:', error);
-                    alert('An error occurred while liking the post. Please ensure you are logged in before trying again'); // Notify the user
+                    alert('An error occurred while liking the post.');
                 });
         }
     </script>
