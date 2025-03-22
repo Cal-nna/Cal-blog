@@ -11,11 +11,24 @@ class PostsController extends Controller
     // Like a post
     public function like(Post $post)
     {
-        // Increment the likes count
-        $post->increment('likes');
+        $user = auth()->user();
 
-        // Return the updated likes count as JSON
-        return response()->json(['likes' => $post->likes]);
+        // Check if the user has already liked the post
+        if ($user->likedPosts()->where('post_id', $post->id)->exists()) {
+            // Unlike the post
+            $user->likedPosts()->detach($post->id);
+            $message = 'Post unliked successfully';
+        } else {
+            // Like the post
+            $user->likedPosts()->attach($post->id);
+            $message = 'Post liked successfully';
+        }
+
+        // Return the updated likes count
+        return response()->json([
+            'likes' => $post->likedBy()->count(),
+            'message' => $message,
+        ]);
     }
     public function __construct()
     {
@@ -138,5 +151,16 @@ class PostsController extends Controller
             ->with('message', 'Your post has been deleted!');
     }
 
+    public function likedPosts()
+    {
+        // Get the authenticated user
+        $user = auth()->user();
+
+        // Fetch the posts liked by the user
+        $likedPosts = $user->likedPosts()->with('user')->get();
+
+        // Pass the liked posts to the view
+        return view('liked-posts', compact('likedPosts'));
+    }
 }
 

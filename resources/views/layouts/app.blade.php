@@ -55,5 +55,8 @@
         @include('layouts.footer')
     </div>
 </div>
+<a href="{{ route('liked-posts') }}" class="bg-blue-500 uppercase bg-transparent text-gray-100 text-xs font-extrabold py-3 px-5 rounded-3xl">
+    My Liked Posts
+</a>
 </body>
 </html>
