@@ -24,7 +24,7 @@
                     {{ config('app.name', 'Laravel') }}
                 </a>
             </div>
-            <nav class="space-x-4 text-gray-300 text-sm sm:text-base">
+            <nav class="space-x-4 text-gray-300 text-sm sm:text-base flex items-center">
                 <a class="no-underline hover:underline" href="/">Home</a>
                 <a class="no-underline hover:underline" href="/blog">Blog</a>
                 @guest
@@ -33,7 +33,7 @@
                         <a class="no-underline hover:underline" href="{{ route('register') }}">{{ __('Register') }}</a>
                     @endif
                 @else
-                    <span>{{ Auth::user()->name }}</span>
+                    <span class="text-gray-300">{{ Auth::user()->name }}</span>
 
                     <a href="{{ route('logout') }}"
                        class="no-underline hover:underline"
@@ -43,6 +43,9 @@
                         {{ csrf_field() }}
                     </form>
                 @endguest
+                <a href="{{ route('liked-posts') }}" class="bg-yellow-500 text-black text-xs font-extrabold py-2 px-4 rounded-3xl hover:bg-yellow-600 transition duration-300">
+                    My Liked Posts
+                </a>
             </nav>
         </div>
     </header>
@@ -55,8 +58,5 @@
         @include('layouts.footer')
     </div>
 </div>
-<a href="{{ route('liked-posts') }}" class="bg-blue-500 uppercase bg-transparent text-gray-100 text-xs font-extrabold py-3 px-5 rounded-3xl">
-    My Liked Posts
-</a>
 </body>
 </html>
