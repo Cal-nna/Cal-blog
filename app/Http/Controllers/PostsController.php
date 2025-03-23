@@ -8,10 +8,37 @@ use Cviebrock\EloquentSluggable\Services\SlugService;
 
 class PostsController extends Controller
 {
- 
+
+    // Like a post
+    public function like(Post $post)
+    {
+        // Get the authenticated user
+        $user = auth()->user();
+
+        // Check if the user has already liked the post
+        if ($user->likedPosts()->where('post_id', $post->id)->exists()) {
+            // Unlike the post
+            $user->likedPosts()->detach($post->id);
+            $message = 'Post unliked successfully';
+        } else {
+            // Like the post
+            $user->likedPosts()->attach($post->id);
+            $message = 'Post liked successfully';
+        }
+
+
+        // Debug: Log the likes table
+        \Log::info('Likes Table:', ['likes' => \DB::table('likes')->get()]);
+
+        // Return the updated likes count
+        return response()->json([
+            'likes' => $post->likedBy()->count(),
+            'message' => $message,
+        ]);
+    }
     public function __construct()
     {
-        $this->middleware('auth', ['except' => ['index', 'show']]);
+        $this->middleware('auth', ['except' => ['index', 'show', 'like']]);
     }
     /**
      * Display a listing of the resource.
@@ -20,9 +47,17 @@ class PostsController extends Controller
      */
     public function index()
     {
-        return view('blog.index')
-            ->with('posts', Post::orderBy('updated_at', 'DESC')->get());
+        $posts = Post::latest()->take(3)->get();
+        return view('index', compact('posts'));
     }
+
+    // Method for the blog page
+    public function blog()
+    {
+        $posts = Post::latest()->paginate(10); // Fetch all posts with pagination
+        return view('blog.index', compact('posts'));
+    }
+
 
     /**
      * Show the form for creating a new resource.
@@ -127,6 +162,18 @@ class PostsController extends Controller
 
         return redirect('/blog')
             ->with('message', 'Your post has been deleted!');
+    }
+
+    public function likedPosts()
+    {
+        // Get the authenticated user
+        $user = auth()->user();
+
+        // Fetch the posts liked by the user
+        $likedPosts = $user->likedPosts()->with('user')->get();
+
+        // Pass the liked posts to the view
+        return view('liked-posts', compact('likedPosts'));
     }
 }
 

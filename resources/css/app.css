@@ -1,15 +1,21 @@
 @import "tailwindcss/base";
-
 @import "tailwindcss/components";
-
 @import "tailwindcss/utilities";
 
-.background-image
-{
+.background-image {
     background-image: url('https://art.ngfiles.com/images/6147000/6147304_1341533_thecal_untitled-6147304.0caffcfefe6bdbac5c22b7d5bca974cc.webp?f1729695313');
     background-position: center center;
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
     height: 600px;
+}
+
+/* Scoped Gallery Background */
+.gallery-section-background {
+    background-image: url('/images/Screenshot 2025-03-23 143751.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }

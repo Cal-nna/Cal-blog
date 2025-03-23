@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PagesController;
 use App\Http\Controllers\PostsController;
-
+use App\Http\Controllers\GalleryController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -29,4 +29,29 @@ Route::get('/home', [\App\Http\Controllers\HomeController::class, 'index'])->nam
 Auth::routes();
 
 Route::get('/home', [\App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('/gallery', [GalleryController::class, 'index'])->name('gallery');
+
+use App\Http\Controllers\AboutController;
+
+use App\Http\Controllers\ContactController;
+
+// Route to display the contact form (GET)
+Route::get('/contactUs', [ContactController::class, 'index'])->name('contactUs');
+
+// Route to handle form submissions (POST)
+Route::post('/contactUs', [ContactController::class, 'store'])->name('contactUs.store');
+
+Route::get('/aboutUs', [AboutController::class, 'index'])->name('aboutUs');
+
+use App\Http\Controllers\PostController;
+
+Route::get('/liked-posts', [PostsController::class, 'likedPosts'])->name('liked-posts')->middleware('auth');
+
+Route::post('/posts/{post}/like', [PostsController::class, 'like'])->name('posts.like');
+
+Route::get('/', [PostsController::class, 'index']);
+
+Route::get('/blog', [PostsController::class, 'blog']);
+
 
