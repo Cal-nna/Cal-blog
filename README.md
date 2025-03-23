@@ -16,3 +16,6 @@ This is a blog platform built with PHP and Laravel, designed to inspire and moti
 - **MySQL**: Database management system for storing blog posts, user data, and more.
 - **Bootstrap**: Front-end framework for responsive and modern design.
 - **HTML/CSS/JavaScript**: Standard web technologies for structuring and styling the blog.
+
+## Instructions
+--With the proper installments, by going to the terminal and typing "php artisan serve", will provide a link to the website. Login or make an account to access all content
