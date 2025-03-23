@@ -47,11 +47,15 @@ class PostsController extends Controller
      */
     public function index()
     {
-        // Fetch the latest 3 posts (or however many you want to display)
         $posts = Post::latest()->take(3)->get();
-
-        // Pass the $posts variable to the view
         return view('index', compact('posts'));
+    }
+
+    // Method for the blog page
+    public function blog()
+    {
+        $posts = Post::latest()->paginate(10); // Fetch all posts with pagination
+        return view('blog.index', compact('posts'));
     }
 
 

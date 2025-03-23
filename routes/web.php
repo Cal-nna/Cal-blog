@@ -50,4 +50,8 @@ Route::get('/liked-posts', [PostsController::class, 'likedPosts'])->name('liked-
 
 Route::post('/posts/{post}/like', [PostsController::class, 'like'])->name('posts.like');
 
-Route::get('/', [PostController::class, 'index']);
+Route::get('/', [PostsController::class, 'index']);
+
+Route::get('/blog', [PostsController::class, 'blog']);
+
+
