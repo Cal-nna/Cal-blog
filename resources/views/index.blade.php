@@ -92,7 +92,9 @@
     </div>
 
     <!-- Centered "See more images" Button -->
-    <div class="flex justify-center mt-12">
-        <a class="no-underline hover:underline" href="{{ route('gallery') }}">{{ __('Gallery') }}</a>
+    <div class="flex justify-center mt-12 mb-20"> <!-- Added mb-20 for bottom margin -->
+        <a class="no-underline hover:underline bg-yellow-500 text-black px-6 py-3 rounded-lg font-bold hover:bg-yellow-600 transition duration-300" href="{{ route('gallery') }}">
+            {{ __('Gallery') }}
+        </a>
     </div>
 @endsection
