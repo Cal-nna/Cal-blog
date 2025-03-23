@@ -32,8 +32,8 @@
         <!-- Card Grid -->
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-4/5 mx-auto py-15">
             @foreach ($posts as $post)
-                <!-- Entire Card as a Link -->
-                <a href="/blog/{{ $post->slug }}" class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 border-4 border-yellow-500 block"> <!-- Added block class -->
+                <!-- Card Container -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 border-4 border-yellow-500 cursor-pointer" onclick="window.location.href='/blog/{{ $post->slug }}'"> <!-- Make the card clickable -->
                     <!-- Post Image -->
                     <img src="{{ asset('images/' . $post->image_path) }}" alt="{{ $post->title }}" class="w-full h-48 object-cover">
 
@@ -59,8 +59,8 @@
                         <div class="mt-4">
                             <button
                                 onclick="likePost(event, {{ $post->id }})"
-                            class="bg-gray-200 text-gray-700 px-4 py-2 rounded-full hover:bg-gray-300 transition duration-300">
-                            ❤️ Like (<span id="likes-{{ $post->id }}">{{ $post->likes }}</span>)
+                                class="bg-gray-200 text-gray-700 px-4 py-2 rounded-full hover:bg-gray-300 transition duration-300">
+                                ❤️ Like (<span id="likes-{{ $post->id }}">{{ $post->likes }}</span>)
                             </button>
                         </div>
 
@@ -84,7 +84,7 @@
                             </div>
                         @endif
                     </div>
-                </a>
+                </div>
             @endforeach
         </div>
     </div>
