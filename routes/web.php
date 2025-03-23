@@ -49,3 +49,5 @@ use App\Http\Controllers\PostController;
 Route::get('/liked-posts', [PostsController::class, 'likedPosts'])->name('liked-posts')->middleware('auth');
 
 Route::post('/posts/{post}/like', [PostsController::class, 'like'])->name('posts.like');
+
+Route::get('/', [PostController::class, 'index']);

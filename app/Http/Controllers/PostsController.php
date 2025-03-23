@@ -8,6 +8,7 @@ use Cviebrock\EloquentSluggable\Services\SlugService;
 
 class PostsController extends Controller
 {
+
     // Like a post
     public function like(Post $post)
     {
@@ -24,6 +25,7 @@ class PostsController extends Controller
             $user->likedPosts()->attach($post->id);
             $message = 'Post liked successfully';
         }
+
 
         // Debug: Log the likes table
         \Log::info('Likes Table:', ['likes' => \DB::table('likes')->get()]);
@@ -45,8 +47,11 @@ class PostsController extends Controller
      */
     public function index()
     {
-        return view('blog.index')
-            ->with('posts', Post::orderBy('updated_at', 'DESC')->get());
+        // Fetch the latest 3 posts (or however many you want to display)
+        $posts = Post::latest()->take(3)->get();
+
+        // Pass the $posts variable to the view
+        return view('index', compact('posts'));
     }
 
 
