@@ -32,7 +32,8 @@
         <!-- Card Grid -->
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-4/5 mx-auto py-15">
             @foreach ($posts as $post)
-                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                <!-- Entire Card as a Link -->
+                <a href="/blog/{{ $post->slug }}" class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 border-4 border-yellow-500 block"> <!-- Added block class -->
                     <!-- Post Image -->
                     <img src="{{ asset('images/' . $post->image_path) }}" alt="{{ $post->title }}" class="w-full h-48 object-cover">
 
@@ -54,17 +55,12 @@
                             {{ Str::limit($post->description, 100) }}
                         </p>
 
-                        <!-- Keep Reading Button -->
-                        <a href="/blog/{{ $post->slug }}" class="inline-block bg-blue-500 text-white px-6 py-2 rounded-full hover:bg-blue-600 transition duration-300">
-                            Keep Reading
-                        </a>
-
                         <!-- Like Button -->
                         <div class="mt-4">
                             <button
-                                onclick="likePost({{ $post->id }})"
-                                class="bg-gray-200 text-gray-700 px-4 py-2 rounded-full hover:bg-gray-300 transition duration-300">
-                                ❤️ Like (<span id="likes-{{ $post->id }}">{{ $post->likes }}</span>)
+                                onclick="likePost(event, {{ $post->id }})"
+                            class="bg-gray-200 text-gray-700 px-4 py-2 rounded-full hover:bg-gray-300 transition duration-300">
+                            ❤️ Like (<span id="likes-{{ $post->id }}">{{ $post->likes }}</span>)
                             </button>
                         </div>
 
@@ -88,14 +84,17 @@
                             </div>
                         @endif
                     </div>
-                </div>
+                </a>
             @endforeach
         </div>
     </div>
 
     <!-- JavaScript to Handle Like Button -->
     <script>
-        function likePost(postId) {
+        function likePost(event, postId) {
+            event.preventDefault(); // Prevent the card link from being triggered
+            event.stopPropagation(); // Stop event bubbling
+
             fetch(`/posts/${postId}/like`, {
                 method: 'POST',
                 headers: {
